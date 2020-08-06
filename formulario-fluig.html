@@ -1,0 +1,179 @@
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css"/>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+</head>
+<body>
+    <!--Div de estilo do fluig-->
+	<div class="fluig-style-guide">
+		<form name="form" role="form">
+			<div id="mensagemInteracao"></div>
+			<div id="formPrincipal">	
+                <!--Painel do Requisitante-->
+				<div class="panel panel-primary">
+				    <div class="panel-heading">
+				        <h3 class="panel-title"><i class="fluigicon fluigicon-user icon-md"></i> i18n.translate("Requisitante")</h3>
+                    </div>
+                    <!--Corpo do painel-->
+				    <div class="panel-body">
+                        <!--Primeira Linha painel-->
+						<div class="row">
+							 <div class="form-group col-md-6">
+						        <label for="inputNome">i18n.translate("Nome")</label>
+						        <input type="text" class="form-control" name="inputNome" id="nomeUsuario" placeholder="Nome do Usuário">
+						    </div>
+						    <div class="form-group col-md-4">
+						        <label for="inputEmail">i18n.translate("E-mail")</label>
+						        <input type="email" class="form-control" name="inputEmail" id="inputEmail" placeholder="Digite seu Email">
+						    </div>
+						    <div class="form-group col-md-2">
+						        <label for="inputTelefone">i18n.translate("Telefone")</label>
+						        <input type="text" class="form-control" name="inputTelefone" id="inputTelefone" placeholder="Digite seu Telefone" mask="(00) 90000-0000">
+						    </div>
+                        </div>
+                        <!--Fim da primeira Linha-->
+
+			    		<!--Segunda Linha painel-->
+			    		<div class="row">
+			    			<div class="form-group col-md-3">
+			    				<label for="inputDocIdentidade">i18n.translate("DocumentodeIdentidade")</label>
+			    				<input type="text" name="inputDocIdentidade" id="inputDocIdentidade" class="form-control">
+			    			</div>
+			    			<div class="form-group col-md-3">
+				    			<label for="inputDataNascimento">i18n.translate("DatadeNascimento")</label>
+				    			<input type="text" name="inputDataNascimento" id="inputDataNascimento" class="form-control">
+			    			</div>
+			    		</div>
+				    </div>
+                </div>
+                <!--Fim painel Requisitante-->
+
+                <!--Começo painel Ponto comercial                   OBS:("i18n.translate") == internacionalização --> 
+				<div class="panel panel-primary">
+				    <div class="panel-heading">
+				        <h3 class="panel-title"><i class="fluigicon fluigicon-map-marker icon-md"></i>i18n.translate("PontoComercial")</h3>
+				    	</div>
+			    			<div class="form-group col-md-2">
+			    				<label for="tipoPonto">i18n.translate("TipodePonto")</label>
+			    				<div class="radio">
+			    					<label><input type="radio" name="tipoPonto" value="quiosque">i18n.translate("Quiosque")</label>
+			    					<label><input type="radio" name="tipoPonto" value="loja">i18n.translate("Loja")</label>
+			    				</div>
+			    			</div>
+			    			<div class="form-group col-md-4">
+			    				<label>i18n.translate("DiasdeFuncionamento")</label>
+			    				<div class="checkbox">
+			    					<label><input type="checkbox" name="domingo">i18n.translate("Dom")</label>
+			    					<label><input type="checkbox" name="segunda">i18n.translate("Seg")</label>
+			    					<label><input type="checkbox" name="terca">i18n.translate("Ter")</label>
+			    					<label><input type="checkbox" name="quarta">i18n.translate("Qua")</label>
+			    					<label><input type="checkbox" name="quinta">i18n.translate("Qui")</label>
+			    					<label><input type="checkbox" name="sexta">i18n.translate("Sex")</label>
+			    					<label><input type="checkbox" name="sabado">i18n.translate("Sab")</label>		
+			    				</div>
+			    			</div>  	
+			    		<div class="row">
+			    			<div class="form-group col-md-2">
+			    				<label for="cep">i18n.translate("Cep")</label>
+			    				<input type="text" name="cep" id="cep" class="form-control" mask="00000-000">		
+			    			</div>
+			    			<div class="form-group col-md-3">
+			    				<label for="inputLogradouro">i18n.translate("Rua")</label>
+			    				<input type="text" name="inputLogradouro" id="inputLogradouro" class="form-control">		
+			    			</div>
+			    			<div class="form-group col-md-1">
+			    				<label for="inputNumero">i18n.translate("Numero")</label>
+			    				<input type="text" name="inputNumero" id="inputNumero" class="form-control">		
+			    			</div>
+			    			<div class="form-group col-md-2">
+			    				<label for="inputBairro">i18n.translate("Bairro")</label>
+			    				<input type="text" name="inputBairro" id="inputBairro" class="form-control">		
+			    			</div>
+			    			<div class="form-group col-md-2">
+			    				<label for="inputCidade">i18n.translate("Cidade")</label>
+			    				<input type="text" name="inputCidade" id="inputCidade" class="form-control">		
+			    			</div>
+			    			<div class="form-group col-md-2">
+			    				<label for="inputUf">i18n.translate("Estado")</label>
+			    				<input type="text" name="inputUf" id="inputUf" class="form-control">		
+			    			</div>
+			    		</div>
+			    		<div class="row">
+							<div class="form-group col-md-8">
+								<label for="informacoes">i18n.translate("Informacoes")</label>
+			    				<textarea rows="7" name="informacoes" id="informacoes" class="form-control"></textarea>
+							</div>
+						</div>
+			    	</div>
+			    	
+			    <div class="panel panel-primary">
+				    <div class="panel-heading">
+				        <h3 class="panel-title"><i class="fluigicon fluigicon-users icon-md"></i> i18n.translate("Responsaveis")</h3>
+				    </div>
+				    <div class="panel-body">
+				    	<table tablename="responsaveisTabela" class="table table-hover" addbuttonclass="btn btn-info" addbuttonlabel="Adicionar Responsáveis">
+				    		<thead>
+				    			<tr>
+				    				<td>i18n.translate("Responsaveis")</td>
+				    			</tr>
+				    		</thead>
+				    		<tbody>
+				    			<tr>
+				    				<td>
+					    				<input
+										    type="zoom"
+										    id = "responsavel"
+										    name="responsavel"
+										    data-zoom="{
+										        'displayKey':'nome',
+										        'datasetId':'dsResponsaveisQs',
+										        'placeholder':'Escolha o usuário',
+										        'fields':[
+										            {
+										               'field':'login',
+										               'label':'ID'
+										            },{
+										              'field':'nome',
+										              'label':'Nome',
+										              'standard':'true'
+										            }
+										        ]
+										     }"
+										/>
+									</td>
+				    			</tr>
+				    		</tbody>
+				    	</table>
+			    	</div>
+                </div>
+                <!--Painel Financeiro           OBS: "DATASET" -> dsFormMoedasQs -> banco de dados moedas -->
+			    <div class="panel panel-primary">
+				    <div class="panel-heading">
+				        <h3 class="panel-title"><i class="fluigicon fluigicon-money icon-md"></i> i18n.translate("Financeiro")</h3>
+				    </div>
+				    <div class="panel-body">
+						<div class="row">
+							<div class="form-group col-md-2">
+								<label for="moeda">Moeda</label>
+			    				<select type="number" name="moeda" id="moeda" class="form-control" dataset="dsFormMoedasQs" datasetkey="moeda" datasetvalue="simbolo"></select>
+							</div>	
+							<div class="form-group col-md-2">
+								<label for="inputValor">Valor</label>
+			    				<input type="number" name="inputValor" id="inputValor" class="form-control">
+							</div>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+
+<script type="text/javascript" src="CEP.js"></script>
+<script type="text/javascript">
+	var calendarioNascimento = FLUIGC.calendar('#inputDataNascimento');
+</script>
+</html>
